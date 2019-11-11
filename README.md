@@ -1,13 +1,6 @@
 # TechFest
 TechFest`19 Web and Mobile App Development Competition - CUI Attock
-
-
-# Rules
-1. Rule 1
-2. Rule 1
-3. Rule 1
-4. Rule 1
-5. Rule 1
+`
 
 # Git Configuration
 Download git Client : https://git-scm.com/
