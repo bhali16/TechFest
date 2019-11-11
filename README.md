@@ -12,7 +12,9 @@ TechFest`19 Web and App Development Competition - CUI Attock
 # How to initialize and Push your Project to TechFest Repo
 
 ## 1. Initialize the local directory as a Git repository.
+```
 git init
+```
 
 ## 2. Add the files in your new local repository. This stages them for the first commit.
 git add .
