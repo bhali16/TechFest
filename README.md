@@ -1,6 +1,5 @@
 # TechFest
-TechFest`19 Web and Mobile App Development Competition - CUI Attock
-`
+TechFest19 Web and Mobile App Development Competition - CUI Attock
 
 # Git Configuration
 Download git Client : https://git-scm.com/
