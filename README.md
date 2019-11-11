@@ -37,7 +37,7 @@ git commit -m "Your Commit Description"
 ### 4. Copy the https URL of TechFest repo.
 In the Command prompt, add the URL (https://github.com/bhali16/TechFest.git) for the remote repository where your local repository (Project) will be pushed.
 ```
-git remote add origin remote https://github.com/bhali16/TechFest.git
+git remote add origin https://github.com/bhali16/TechFest.git
 git remote -v
 ```
 
