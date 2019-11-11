@@ -1,5 +1,5 @@
 # TechFest
-TechFest`19 Web and App Development Competition - CUI Attock
+TechFest`19 Web and Mobile App Development Competition - CUI Attock
 
 
 # Rules
@@ -8,6 +8,14 @@ TechFest`19 Web and App Development Competition - CUI Attock
 3. Rule 1
 4. Rule 1
 5. Rule 1
+
+# Git Configuration
+Download git Client : https://git-scm.com/
+
+```
+git config --global user.name "John Doe"
+git config --global user.email johndoe@example.com
+```
 
 # How to initialize and Push your Project to TechFest Repo
 
@@ -27,7 +35,7 @@ git commit -m "initial commit"
 ```
 
 ### 4. Copy the https URL of TechFest repo.
-In the Command prompt, add the URL for the remote repository where your local repository will be pushed.
+In the Command prompt, add the URL (https://github.com/bhali16/TechFest.git) for the remote repository where your local repository will be pushed.
 ```
 git remote add origin remote https://github.com/bhali16/TechFest.git
 git remote -v
