@@ -72,7 +72,7 @@ a {
 </head>
 <body>
 <div style="position: relative;display: block;width: 50%;margin: 0 auto;">
-<form action="/action_page.php">
+<form action="/action_page.php" method="post">
     
   <div class="container" >
       
@@ -81,13 +81,13 @@ a {
     <hr>
 
     <label for="email"><b>Email</b></label>
-    <input type="text" placeholder="Enter Email" name="email" required>
+    <input type="text" placeholder="Enter Email" name="email" required id="email">
 
     <label for="psw"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="psw" required>
+    <input type="password" placeholder="Enter Password" name="psw" required id="password">
 
     <label for="psw-repeat"><b>Repeat Password</b></label>
-    <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+    <input type="password" placeholder="Repeat Password" name="psw-repeat" required id="repeatedpassord">
     <hr>
 
     <button type="submit" class="registerbtn">Register</button>
