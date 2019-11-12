@@ -1,0 +1,14 @@
+@media (min-width: 991px) and (max-width: 1200px) { /****For Mini Laptops Sceeen ***/
+}
+@media (min-width: 768px) and (max-width: 990px) 
+{
+   
+                                                            /****For Tablet Sceeen***/
+}
+@media (max-width: 767px) { /****For Mobile Sceeen Landscape***/
+}
+@media only screen and (max-width: 480px) { /****For Mobile Sceeen Portriate***/
+  business; 
+width:100%;
+    float:left;
+}

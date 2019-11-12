@@ -1,0 +1,43 @@
+.bg-dark
+{
+    background-color: white;
+}
+header
+{
+    position: relative;
+    display: block;
+    margin: 0 auto;
+   
+}
+.navbar
+{
+     background-color: white;
+    border: 2px black solid;
+    
+}
+ 
+.navbar-brand
+{
+     margin-top: -10px;
+}
+
+.business
+{
+   position: relative;
+    display: block;
+    width: 300px;
+   
+    
+    
+    margin-left: -210px;
+    margin-top:60px;
+    
+}
+.business a
+{
+    font-weight: 700;
+    font-size: 10px;
+    font-family: 'roboto',sans-serif;
+    word-spacing: 1px;
+    
+}

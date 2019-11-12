@@ -1,0 +1,195 @@
+/*#########################  Default   #####################*/
+/*----------------------------------------------------------------------------------------------------------
+                                  Start Header
+-------------------------------------------------------------------------------------------------------------*/
+.header
+{
+    position: fixed;
+    display: block;
+    margin: 0 auto;
+	left:0;
+	right:0;
+	top:0;
+	z-index:1;
+    background-color: white;
+    border-bottom: 1px  #a9abaf solid;
+}
+.container
+{
+    width: 1170px;
+    display: block;
+    position: relative;
+    margin: 0 auto;
+}
+.Logo
+{
+   
+    display: block;
+    margin-top: 12px;
+    margin-left: 30px;
+    margin-bottom: 10px;
+}
+.Logo img
+{
+   width:120px;
+    height: 45px;
+}
+
+.nav
+{
+    display: block;
+ 
+    float:right;
+    /*margin-bottom: 80%;*/
+    margin-top: -55px;
+    margin-right: 30px;
+}
+nav ul
+{
+    list-style-type: none;
+    display: block;
+}
+nav ul li
+{
+    display: inline-block;
+    margin:10px;
+
+}
+nav ul li a
+{
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+    font-family: 'roboto',sans-serif;
+    font-weight: 700px;
+    padding: 1px;
+    transition-property: color;
+    transition-duration: 2s;
+    
+}
+nav ul li a:nth-child(1):hover
+{
+    color: burlywood;
+}
+nav ul li a:nth-child(2):hover
+{
+    color: burlywood;
+}
+nav ul li a:nth-child(3):hover
+{
+    color: burlywood;
+}
+nav ul li a:nth-child(4):hover
+{
+    color: burlywood;
+}
+nav ul li a:nth-child(5):hover
+{
+    color: burlywood;
+}
+nav ul li a:nth-child(6):hover
+{
+    color: burlywood;
+}
+nav ul li a:nth-child(7):hover
+{
+    color: burlywood;
+}
+
+.clearfix
+{
+    clear: both;
+}
+/*-----------------------------------------------------------------------------------------------------------------------------------
+                             
+                                                Start  Section 1 (Image)
+
+---------------------------------------------------------------------------------------------------------------------------------*/
+
+#bg-image
+{
+    position: relative;
+    display: block;
+    background-image: url(../images/infotech.jpg);
+     height: 500px;
+    /*min-height: 80vh;*/
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    background-color: blue;
+    
+    
+}
+.bg-mainheading
+{
+    display: block;
+    position: relative;
+    width: 1200px;
+    margin-top: 70px;
+    max-height: 30vh;
+}
+.bgheading
+{
+    font-size: 33px;
+    font-family: 'roboto',sans-serif;
+    font-weight: lighter;
+    padding-left:100px;
+    word-spacing: 3px;
+    color: white;
+    letter-spacing: 3px;
+    padding-top: 160px;
+}
+
+ .p1
+{
+ font-size: 60px;
+    font-family: 'roboto',sans-serif;
+    font-weight: lighter;
+    padding-top: 40px;
+    padding-left:200px;
+    word-spacing: 3px;
+    color: white;
+    letter-spacing: 3px;
+}
+.overlay
+{
+    background-color: rgba(0,0,0,0.5);
+     height: 500px;
+    position:relative;
+    display: block;
+     /*min-height: 80vh;*/
+  
+}
+.icon-circle
+{
+    position: absolute;
+    top:450px;
+    left: 580px;
+    right: 0;
+    
+    display: block;
+    width: 100px;
+   /* margin: 0 auto;
+    margin-top: 250px;
+    margin-left: 500px;*/
+}
+.arrow{
+     display: block;
+    width: 25px;
+    height: 25px;
+    background: #000;
+    border-radius: 50%;
+    margin: 0 auto;   
+    /*margin-top: 200px;*/
+}
+
+
+.imageicon
+{
+    border: solid white;
+    border-width: 0px 2px 2px 0px;
+     display: inline-block;
+       padding: 3px;
+     transform: rotate(45deg);
+    margin-left: 8px;
+}
