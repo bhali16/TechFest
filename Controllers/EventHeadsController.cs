@@ -114,5 +114,37 @@ namespace TechFest.Controllers
                 return View();
             }
         }
+
+        public ActionResult Dashboard()
+        {
+            if (Session["EventHead"] == null)
+            {
+                return RedirectToAction("Index", "EventHeads");
+            }
+            else
+            {
+                return View();
+            }
+        }
+
+        public ActionResult Details(string Email)
+        {
+            if (Session["EventHead"] == null)
+            {
+                return RedirectToAction("Index", "EventHeads");
+            }
+            else
+            {
+                tblEventHead tbl = db.tblEventHeads.Find(Email);
+                return View(tbl);
+            }
+        }
+
+        [HttpPost]
+        public ActionResult Logout()
+        {
+            Session.Clear();
+            return RedirectToAction("Index", "EventHeads");
+        }
     }
 }

@@ -1,0 +1,14 @@
+﻿#side_bar{
+    width:20%;
+    position:fixed;
+    height:100vh;
+    padding-top:20px;
+    float:left;
+    border-right:.5px solid black;
+    text-align:center;
+}
+#screen_content {
+    width: 79%;
+    padding:0.5%;
+    float: right;
+}

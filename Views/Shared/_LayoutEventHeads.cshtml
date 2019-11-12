@@ -2,9 +2,9 @@
 <html>
 <head>
     @{
-        string organizer = Session["Organizer"].ToString();
+        string eventhead = Session["EventHead"].ToString();
         TechFest.Models.dbTechFestEntities db = new TechFest.Models.dbTechFestEntities();
-        var organizerlist = db.tblOrganizers.Find(organizer);
+        var eventheadlist = db.tblEventHeads.Find(eventhead);
     }
     <link rel="stylesheet" href="~/Content/Site.css" />
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
@@ -29,13 +29,13 @@
     <div class="container-fluid">
         <div class="row" style="width:100%;">
             <div class="col-md-2 text-center">
-                <img title="Profile Picture" data-toggle="tooltip" data-placement="right" class="img-thumbnail" width="70" src="@Url.Content(organizerlist.ProfilePhoto)">
-                @using (Html.BeginForm("Logout", "Organizer", FormMethod.Post))
+                <img title="Profile Picture" data-toggle="tooltip" data-placement="right" class="img-thumbnail" width="70" src="@Url.Content(eventheadlist.ProfilePhoto)">
+                @using (Html.BeginForm("Logout", "EventHeads", FormMethod.Post))
                 {
                     <br />
                     <button style="border:none;" type="submit" data-toggle="tooltip" title="Logout" data-placement="right" class="btn btn-lg btn-link" onclick="showGif()"><i class="glyphicon glyphicon-off"></i></button>
                 }
-                <a data-toggle="tooltip" title="Profile" class="btn btn-info btn-lg btn-block" href="@Url.Action("Details","Organizer",new { Email = organizerlist.Email})"><i class="glyphicon glyphicon-user"></i> @organizerlist.Name</a>
+                <a data-toggle="tooltip" title="Profile" class="btn btn-info btn-lg btn-block" href="@Url.Action("Details","EventHeads",new { Email = eventheadlist.Email})"><i class="glyphicon glyphicon-user"></i> @eventheadlist.Name</a>
                 <br />
                 <div class="panel-group text-center">
                     <div class="panel panel-default">

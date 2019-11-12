@@ -115,5 +115,24 @@ namespace TechFest.Controllers
                 return View();
             }
         }
+
+        [HttpPost]
+        public ActionResult Logout()
+        {
+            Session.Clear();
+            return RedirectToAction("Index", "Participant");
+        }
+
+        public ActionResult Dashboard()
+        {
+            if (Session["Participant"] == null)
+            {
+                return RedirectToAction("Index", "Participant");
+            }
+            else
+            {
+                return View();
+            }
+        }
     }
 }
