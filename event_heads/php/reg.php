@@ -1,10 +1,9 @@
 <?php
 
-require 'config/conn.php';
+require '../config/conn.php';
 
 
 // insert in database
-$username_exist_err = "";
 if(isset($_POST["submit"])){
     
 
@@ -17,7 +16,12 @@ $psd = $_POST['psd'];
 $rpsd = $_POST['rpsd'];
 $phone = $_POST['phone'];
     
-$sql = "INSERT INTO event_heads( name, email, password, phone, gender, address, city_town, e_id) VALUES ({$name},{$email},{$psd},{$phone},{$gender},{$address},{$city_town},{$fname},1)";
+    if($psd !== $rpsd){
+        header('Location: http://localhost/000/techfest/event_heads/register.php?pass=f');
+        return;
+    }
+    
+$sql = "INSERT INTO event_heads( name, email, password, phone, gender, address, city_town, e_id) VALUES ('{$name}','{$email}','{$psd}','{$phone}','{$gender}','{$address}','{$city_town}',0)";
 
 $sql2 = "select * from event_heads";
 $result2 = mysqli_query($conn, $sql2);
@@ -29,15 +33,15 @@ if (mysqli_num_rows($result2) != 0 ) {
             if ($email == $row["email"]) {        
 
                 //die("Already exists");
-                $username_exist_err = "user already exists";
-                header('Location: http://localhost/000/techfest/event_heads/register.php?username_exist_err=false');
+                header('Location: http://localhost/000/techfest/event_heads/register.php?user=f');
+                return;
 
             }
         }
     
     if (mysqli_query($conn, $sql)) {
                 
-        header('Location: http://localhost/000/techfest/event_heads/login.php?username_exist_err=true');
+        header('Location: http://localhost/000/techfest/event_heads/login.php?success=true');
         
     } else {
     

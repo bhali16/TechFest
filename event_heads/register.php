@@ -1,3 +1,6 @@
+<?php 
+session_start();
+?>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -28,23 +31,29 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
   </div>
   <h2 class="form-heading">Event Heads Registeration</h2>
   <form class="form-signin app-cam" action="php/reg.php" method="post">
-      <input type="text" class="form-control1" name="name" placeholder="Full Name" autofocus="">
-      <input type="text" class="form-control1"  name="address" placeholder="Address" autofocus="">
-      <input type="text" class="form-control1"  name="email" placeholder="Email" autofocus="">
-      <input type="text" class="form-control1"  name="city_town" placeholder="City/Town" autofocus="">
+      <input required type="text" class="form-control1" name="name" placeholder="Full Name" autofocus="">
+      <input required type="text" class="form-control1"  name="address" placeholder="Address" autofocus="">
+      <input required type="text" class="form-control1"  name="email" placeholder="Email" autofocus="">
+      <input required type="text" class="form-control1"  name="city_town" placeholder="City/Town" autofocus="">
       <div class="radios">
         <label for="radio-01" class="label_radio" >
-            <input type="radio" checked="" name="gender"> Male
+            <input type="radio" checked="" value="male" name="gender"> Male
         </label>
         <label for="radio-02" class="label_radio">
-            <input type="radio"  name="gender" > Female
+            <input type="radio"  value="female" name="gender" > Female
         </label>
 	  </div>
 	  
-      <input name="psd" type="password" class="form-control1" placeholder="Password">
-      <input name="rpsd" type="password" class="form-control1" placeholder="Re-type Password">
-      <input type="text" class="form-control1"  name="phone" placeholder="Phone" autofocus="">
+      <input required name="psd" type="password" class="form-control1" placeholder="Password">
+      <input required name="rpsd" type="password" class="form-control1" placeholder="Re-type Password">
+      <input required type="text" class="form-control1"  name="phone" placeholder="Phone" autofocus="">
       <button class="btn btn-lg btn-success1 btn-block" name="submit" type="submit">Submit</button>
+      <?php if(isset($_GET['pass'])){?>
+        <span style="color:red">password not matched</span><br>
+      <?php }?>
+        <?php if(isset($_GET['user'])){?>
+        <span style="color:red">email already exists</span>
+      <?php }?>
       <div class="registration">
           Already Registered.
           <a class="" href="login.php">
@@ -52,8 +61,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
           </a>
       </div>
   </form>
-   <div class="copy_layout login register">
-      <p>Copyright &copy; 2015 Modern. All Rights Reserved | Design by <a href="http://w3layouts.com/" target="_blank">W3layouts</a> </p>
-   </div>
+<?php include('include/footer.php');?>
 </body>
 </html>

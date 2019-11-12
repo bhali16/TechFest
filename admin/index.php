@@ -88,8 +88,8 @@ if(!isset($_SESSION["email"])){
                 <div class="col-md-2" style="margin-top: 20px;"><caption><h2>Users</h2></caption></div>
                 <div class="col-md-8" style="margin-top: 20px;">
                     <form action="#" class="form-inline">
-                        <input class="form-control bg-primary" type="text" placeholder="user email" name="user_search">
-                        <button class="btn btn-primary" type="submit">Find</button>
+                        <input class="form-control1 bg-primary" type="text" placeholder="Find user with email" name="user_search">
+                        <button class="btn btn-block btn-primary" type="submit">Find</button>
                     </form>
                 </div>
             </div>

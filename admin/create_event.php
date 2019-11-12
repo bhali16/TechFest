@@ -1,6 +1,10 @@
 
 <?php 
 session_start();
+require 'config/conn.php';
+$sql = "SELECT * FROM event_heads";
+$result2 = mysqli_query($conn, $sql);
+
 if(!isset($_SESSION["email"])){
     header('Location: http://localhost/000/techfest/admin/login.php');
 }?>
@@ -36,30 +40,51 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
   	       <h3>Create Events</h3>
   	         <div class="tab-content">
 						<div class="tab-pane active" id="horizontal-form">
-							<form class="form-horizontal">
+							<form class="form-horizontal" method="post" action="php/create_event.php" enctype="multipart/form-data">
 								<div class="form-group">
 									<div class="col-sm-8">
-										<input type="text" class="form-control1" id="focusedinput" placeholder="Event Title">
+										<input required name="title" type="text" class="form-control1" id="focusedinput" placeholder="Event Title">
 									</div>
 								</div>
 								<div class="form-group">
 									<div class="col-sm-8"  style="height: 100px;">
-                                        <textarea class="form-control1" style="height: 100px;" placeholder="Description"></textarea>
+                                        <textarea required name="dtn" class="form-control1" style="height: 100px;" placeholder="Description"></textarea>
+									</div>
+								</div>
+                                <div class="form-group">
+									<div class="col-sm-8"  style="height: 100px;">
+                                        <caption>Start date</caption>
+                                        <input required name="start_date" type="date" class="form-control1" id="focusedinput" placeholder="Event Title">
+									</div>
+								</div>
+                                <div class="form-group">
+									<div class="col-sm-8"  style="height: 100px;">
+                                        <caption>End date</caption>
+                                        <input required name="end_date" type="date" class="form-control1" id="focusedinput" placeholder="Event Title">
 									</div>
 								</div>
                                 <div class="form-group">
 									<div class="col-sm-8">
-                                        <select class="form-control2">
-                                            <option disabled selected>Select Event Head</option>
-                                            <option>adsf</option>
-                                            <option>adsf</option>
+                                        <caption>Select Head Event</caption>
+                                        <select name="head" class="form-control2" required>
+                                            <option disabled selected>None</option>
+<?php 
+if (mysqli_num_rows($result2) != 0 ) {
+    
+    // checking for user existence
+    while($row = mysqli_fetch_assoc($result2)) { ?>
+            <option value="<?php print($row["id"]); ?>"><?php print($row["email"]); ?></option>
+        <?php }
+}
+?>
+                                            
                                         </select>
 									</div>
 								</div>
 								<div class="form-group">
 									<div class="col-sm-8">
                                         Event Image
-										<input type="file" class="form-control2">
+										<input required name="fileToUpload" type="file" class="form-control2">
 									</div>
 								</div>
                                 <div class="form-group">

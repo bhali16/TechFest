@@ -74,6 +74,10 @@
                             <a href="users.php"><i class="fa fa-users nav_icon"></i>Users</a>
                             <!-- /.nav-second-level -->
                         </li>
+                        <li>
+                            <a href="event_heads.php"><i class="fa fa-user nav_icon"></i>Event heads</a>
+                            <!-- /.nav-second-level -->
+                        </li>
                     </ul>
                 </div>
                 <!-- /.sidebar-collapse -->
