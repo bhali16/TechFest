@@ -21,6 +21,9 @@
         .login_fail{
             color: red;
         }
+        a{
+            text-decoration: none;
+        }
     </style>
 </head>
 <body id="login">
@@ -37,6 +40,8 @@
 		<input required type="password" value="Password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}" name="password">
 		<div class="submit"><input type="submit" name="submit" value="Login"></div>
 	</form>
+      <br>
+      <div class="submit"><input class="btn btn-block btn-info" type="button" value="Registration" onclick="window.location.href = 'http://localhost/000/techfest/event_heads/register.php';"></div>
       <?php if(isset($_GET["fail"])){
     ?>
     <p class="login_fail" style="color:red;">Email or password incorrect</p>

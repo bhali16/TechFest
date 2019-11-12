@@ -27,7 +27,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
       </div>
   </div>
   <h2 class="form-heading">Event Heads Registeration</h2>
-  <form class="form-signin app-cam" action="php/reg.php" method="post" onsubmit="valid() return false">
+  <form class="form-signin app-cam" action="php/reg.php" method="post">
       <input type="text" class="form-control1" name="name" placeholder="Full Name" autofocus="">
       <input type="text" class="form-control1"  name="address" placeholder="Address" autofocus="">
       <input type="text" class="form-control1"  name="email" placeholder="Email" autofocus="">
