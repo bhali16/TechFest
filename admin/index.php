@@ -1,5 +1,6 @@
 <?php 
 session_start();
+require 'config/conn.php';
 if(!isset($_SESSION["email"])){
     header('Location: http://localhost/000/techfest/admin/login.php');
 }?>
@@ -47,42 +48,26 @@ if(!isset($_SESSION["email"])){
         <div class="graphs">
             <caption><h2>Recent Events</h2></caption>
      	<div class="col_3">
-        	<div class="col-md-3 widget widget1">
-        		<div class="r3_counter_box">
-                    <img class="pull-left img-rounded img-responsive" src="../imgaes/events_pic/hitman-absolution-hd-wallpapers.jpg" style="margin-right:3px;">
-                    <div class="stats">
-                      <h5><strong>Title</strong></h5>
-                      <span>12-Nov-2019</span>
-                    </div>
-                </div>
-        	</div>
+            <?php 
+$sql = "SELECT * FROM events";
+$result2 = mysqli_query($conn, $sql);
+if (mysqli_num_rows($result2) != 0 ) {
+    
+    // checking for user existence
+    while($row = mysqli_fetch_assoc($result2)) { ?>
             <div class="col-md-3 widget widget1">
         		<div class="r3_counter_box">
-                    <img class="pull-left img-rounded img-responsive" src="../imgaes/events_pic/hitman-absolution-hd-wallpapers.jpg" style="margin-right:3px;">
+                    <img class="pull-left img-rounded img-responsive" src="<?php print($row["img"]); ?>" style="margin-right:3px;">
                     <div class="stats">
-                      <h5><strong>Title</strong></h5>
-                      <span>12-Nov-2019</span>
+                      <h5><strong><?php print($row["title"]); ?></strong></h5>
+                      <span>Start <?php print($row["start_date"]); ?></span>
+                    <span>End <?php print($row["end_date"]); ?></span>
                     </div>
                 </div>
         	</div>
-            <div class="col-md-3 widget widget1">
-        		<div class="r3_counter_box">
-                    <img class="pull-left img-rounded img-responsive" src="../imgaes/events_pic/hitman-absolution-hd-wallpapers.jpg" style="margin-right:3px;">
-                    <div class="stats">
-                      <h5><strong>Title</strong></h5>
-                      <span>12-Nov-2019</span>
-                    </div>
-                </div>
-        	</div>
-            <div class="col-md-3 widget widget1">
-        		<div class="r3_counter_box">
-                    <img class="pull-left img-rounded img-responsive" src="../imgaes/events_pic/hitman-absolution-hd-wallpapers.jpg" style="margin-right:3px;">
-                    <div class="stats">
-                      <h5><strong>Title</strong></h5>
-                      <span>12-Nov-2019</span>
-                    </div>
-                </div>
-        	</div>
+        <?php }
+}
+?>
       </div>
             <div class="row">
                 <div class="col-md-2" style="margin-top: 20px;"><caption><h2>Users</h2></caption></div>
