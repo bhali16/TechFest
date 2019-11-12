@@ -20,7 +20,11 @@
 
     <div class="wrappers">
         <div id="div1">
-          <h1 style="color: white "  style="margin-left: 40px;" >YOU  HAVE SUCESSFULLY SIGNED UP!!!</h1>
+          <h1 style="color: white "  style="margin-left: 40px;" >YOU  HAVE SUCESSFULLY SIGNED UP!!!</h1><br>
+          <h1 style="color: white "  style="margin-left: 40px;" >LOCATION :CONFERENCE ROOM  </h1><br>
+          <h1 style="color: white "  style="margin-left: 40px;" >DATE :11/12/2019 </h1><br>
+          
+
 
         </div>
     </div>
@@ -45,7 +49,7 @@ $category=$_POST['category'];
     else
     {
         
-        echo "";
+        echo "Connection problem";
     }
     
   

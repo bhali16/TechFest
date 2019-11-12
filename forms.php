@@ -10,7 +10,7 @@
 
 	<ul class="first_ul">
 		<li class="active"><a class="active" href="event.html"  target="_blank"> Home</a></li>
-		<li><a href="#"  target="_blank">Register</a></li>
+		<li><a href="all_record.php"  target="_blank">Records</a></li>
 	</ul>
 
 
@@ -49,7 +49,8 @@
 
 <div class="events">
 	
-	<img src="android.jpg" style="width: 320px">
+	<img src="android.jpg" style="width: 320px" >
+
 	<img src="pic2.jpg"  style="height: 320px">
 	<img src="p.jpeg" style="height: 320px">
 	<img src="modern.jpg" style="height: 320px">
