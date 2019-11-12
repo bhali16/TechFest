@@ -53,6 +53,35 @@ class Events extends CI_Controller {
 
 	function registerUser()
 	{
+		if($this -> input -> post("register_user"))
+		{
+			echo "form received";
+			$email = $this -> input -> post("email");
+			$fullname = $this -> input -> post("fullname");
+			$password = $this -> input -> post("password");
+
+
+			// if email does not exist 
+			// register new user
+			$this->db->select('*') -> from('users') -> where("email = '$email'");
+			if(count($this-> db -> get() -> result_array()))
+			{
+				echo "already registered";
+			}else
+			{
+				// insert user
+				$user = array(
+					"full_name" => $fullname,
+					"email" => $email,
+					"password" => $password,
+					"type" => "participant"
+			);
+				$this -> db -> insert("users", $user);
+				echo "user inserted";
+				// redirect
+			}
+		}
+
 		$this -> load -> view("participantregistration_view");
 	}
 

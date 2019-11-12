@@ -59,3 +59,6 @@ $route['event/(:num)'] = 'events/singleEvent/$1';
 $route['profile/event-head'] = 'events/eventHeadProfile';
 
 $route['register'] = 'events/registerUser';
+$route['login'] = 'users/loginUser';
+
+$route['participant'] = "users/participant";
