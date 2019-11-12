@@ -27,8 +27,17 @@ namespace TechFest.Controllers
                 var checkpwd = db.tblParticipants.Where(x => x.Email == obj.Email && x.Pwd == obj.Pwd).FirstOrDefault();
                 if (checkpwd != null)
                 {
-                    Session["Participant"] = checkemail.Email;
-                    return RedirectToAction("Dashboard", "Participant");
+                    var checkapprove = db.tblParticipants.Where(x => x.Approved == true && x.Email==obj.Email && x.Pwd==obj.Pwd).FirstOrDefault();
+                    if (checkapprove != null)
+                    {
+                        Session["Participant"] = checkemail.Email;
+                        return RedirectToAction("Dashboard", "Participant");
+                    }
+                    else
+                    {
+                        ViewBag.error = "Profile not yet approved";
+                        return View();
+                    }
                 }
                 else
                 {
@@ -134,5 +143,7 @@ namespace TechFest.Controllers
                 return View();
             }
         }
+
+
     }
 }

@@ -1,0 +1,47 @@
+﻿@model IEnumerable<TechFest.Models.tblEventHead>
+
+@{
+    ViewBag.Title = "EventHeads";
+    Layout = "~/Views/Shared/_LayoutOrganizer.cshtml";
+}
+<div class="jumbotron text-center">
+    <h2>Event Heads</h2>
+    <p>Total number of event heads are listed bellow</p>
+</div>
+<hr />
+<table class="table table-bordered">
+    <tr>
+        <th>
+            Profile picture
+        </th>
+        <th>
+            Name
+        </th>
+        <th>
+            Gender
+        </th>
+        <th>Email</th>
+        <th>
+            Registration Number
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td class="text-center">
+            <img width="40" class="img-thumbnail" src="@Url.Content(item.ProfilePhoto)" />
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Gender)
+        </td>
+        <td>@Html.DisplayFor(modelitem=>item.Email)</td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RegNo)
+        </td>
+    </tr>
+}
+
+</table>

@@ -2,7 +2,59 @@
 @{
     ViewBag.Title = "Dashboard";
     Layout = "~/Views/Shared/_LayoutOrganizer.cshtml";
+    TechFest.Models.dbTechFestEntities db = new TechFest.Models.dbTechFestEntities();
+    var notapprovelist = db.tblParticipants.Where(x => x.Approved == false).ToList();
 }
+<div class="jumbotron text-center">
+    <h2>
+        Profile waiting for approval
+    </h2>
+</div>
+<table class="table table-bordered">
+    <tr>
+        <th>
+            Profile picture
+        </th>
+        <th>
+            Name
+        </th>
+        <th>
+            Gender
+        </th>
+        <th>Email</th>
+        <th>
+            Registration Number
+        </th>
+        <th>
+            Operation
+        </th>
+    </tr>
 
-<h2>Dashboard</h2>
+    @foreach (var item in notapprovelist)
+    {
+        <tr>
+            <td class="text-center">
+                <img width="40" class="img-thumbnail" src="@Url.Content(item.ProfilePhoto)" />
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Gender)
+            </td>
+            <td>@Html.DisplayFor(modelitem => item.Email)</td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RegNo)
+            </td>
+            <td>
+                @using (Html.BeginForm("Approve", "Organizer", FormMethod.Post))
+                {
+                    <input type="text" name="Email" value="@item.Email" style="display:none" />
+                    <input type="submit" value="Approve" class="btn btn-block btn-success" />
+                }
+            </td>
+        </tr>
+    }
+
+</table>
 

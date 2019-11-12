@@ -75,5 +75,54 @@ namespace TechFest.Controllers
                 return View(organizer);
             }
         }
+
+        public ActionResult EventHeads()
+        {
+            if (Session["Organizer"] == null)
+            {
+                return RedirectToAction("Index", "Organizer");
+            }
+            else
+            {
+                var list = db.tblEventHeads.ToList();
+                return View(list);
+            }
+        }
+
+        public ActionResult Participants()
+        {
+            if (Session["Organizer"] == null)
+            {
+                return RedirectToAction("Index", "Organizer");
+            }
+            else
+            {
+                var list = db.tblParticipants.ToList();
+                return View(list);
+            }
+        }
+
+        [HttpPost]
+        public ActionResult Approve(tblParticipant obj)
+        {
+            if (Session["Organizer"] == null)
+            {
+                return RedirectToAction("Index", "Organizer");
+            }
+            else
+            {
+                if (ModelState.IsValid)
+                {
+                    tblParticipant tbl = db.tblParticipants.Find(obj.Email);
+                    tbl.Approved = true;
+                    db.SaveChanges();
+                    return RedirectToAction("Dashboard", "Organizer");
+                }
+                else
+                {
+                    return RedirectToAction("Dashboard", "Organizer");
+                }
+            }
+        }
     }
 }

@@ -516,6 +516,8 @@
     <Content Include="Views\EventHeads\Details.cshtml" />
     <Content Include="Views\Shared\_LayoutParticipant.cshtml" />
     <Content Include="Views\Participant\Dashboard.cshtml" />
+    <Content Include="Views\Organizer\EventHeads.cshtml" />
+    <Content Include="Views\Organizer\Participants.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
