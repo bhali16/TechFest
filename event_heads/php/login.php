@@ -10,7 +10,7 @@ if(isset($_POST["submit"])){
     $email = $_POST["email"];
     $password = $_POST["password"];
     
-    $sql = "SELECT * FROM admin where email='{$email}' && password='{$password}' ";
+    $sql = "SELECT * FROM event_heads where email='{$email}' && password='{$password}' ";
     
     $result = mysqli_query($conn, $sql);
 
@@ -21,12 +21,12 @@ if(isset($_POST["submit"])){
         session_start();
         $_SESSION["email"]=$row['email'];
         
-        header('Location: http://localhost/000/techfest/admin/index.php');
+        header('Location: http://localhost/000/techfest/event_heads/index.php');
         
     } elseif (mysqli_num_rows($result) == 0) {
         // output data of each row
         
-        header('Location: http://localhost/000/techfest/admin/login.php?fail=failed');
+        header('Location: http://localhost/000/techfest/event_heads/login.php?fail=failed');
             
         
     } else {

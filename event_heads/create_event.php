@@ -2,7 +2,7 @@
 <?php 
 session_start();
 if(!isset($_SESSION["email"])){
-    header('Location: http://localhost/000/techfest/admin/login.php');
+    header('Location: http://localhost/000/techfest/event_heads/login.php');
 }?>
 <!DOCTYPE HTML>
 <html>

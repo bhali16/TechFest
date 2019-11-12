@@ -30,7 +30,7 @@
       </div>
     
   </div>
-  <h2 class="form-heading">Admin Login</h2>
+  <h2 class="form-heading">Event Heads Login</h2>
   <div class="app-cam">
 	  <form method="post" action="php/login.php" name="login">
 		<input required type="text" class="text" value="E-mail address" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'E-mail address';}" name="email">
