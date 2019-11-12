@@ -42,6 +42,8 @@
     <div class="box">
         <a style="text-align:center;" href="@Url.Action("Index","Home")" class="btn btn-lg"><i class="glyphicon glyphicon-home"></i></a>
         <hr />
+        <label class="label label-success" style="font-size:14pt;">EventHead SignUp</label>
+        <hr />
         @using (Html.BeginForm("SignUp", "EventHeads", FormMethod.Post, new { enctype = "multipart/form-data" }))
         {
             @Html.AntiForgeryToken()

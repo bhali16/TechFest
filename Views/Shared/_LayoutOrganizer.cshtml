@@ -1,0 +1,88 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    @{
+        string organizer = Session["Organizer"].ToString();
+        TechFest.Models.dbTechFestEntities db = new TechFest.Models.dbTechFestEntities();
+        var organizerlist = db.tblOrganizers.Find(organizer);
+    }
+    <link rel="stylesheet" href="~/Content/Site.css" />
+    <link rel="shortcut icon" href="~/TemplateImages/favicon.png" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/Content/_Feed.css" />
+    <meta name="viewport" content="width=device-width" />
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    <script type="text/javascript">
+        function showGif() {
+            document.getElementById("gif").style.display = "inline";
+            document.getElementById("bodyid").style.opacity = "0.5";
+        }
+        $(document).ready(function () {
+            $('[data-toggle="tooltip"]').tooltip();
+        });
+    </script>
+    <title>@ViewBag.Title</title>
+    <style>
+        .box {
+            border-radius: 5px;
+            background: white;
+            padding: 10px;
+            box-sizing: border-box;
+            border: 1px solid rgba(0,0,0,.1);
+            box-shadow: 0 5px 10px rgba(0,0,0,.2);
+        }
+    </style>
+</head>
+<body style="padding-top:0;background-color:#F7F9F9;">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-2 navbar-fixed-top" style="text-align:center;margin-top:10px;">
+                <img title="Profile Picture" data-toggle="tooltip" data-placement="right" class="img-thumbnail" width="70" src="@Url.Content(organizerlist.ProfilePhoto)">
+                @using (Html.BeginForm("Logout", "Organizer", FormMethod.Post))
+                {
+                    <br />
+                    <button style="border:none;" type="submit" data-toggle="tooltip" title="Logout" data-placement="right" class="btn btn-lg btn-link" onclick="showGif()"><i class="glyphicon glyphicon-off"></i></button>
+                }
+                <a data-toggle="tooltip" title="Profile" class="btn btn-info btn-lg btn-block" href="@Url.Action("Details","Organizer",new { Email = organizerlist.Email})"><i class="glyphicon glyphicon-user"></i> @organizerlist.Name</a>
+                <br />
+                <div class="panel-group">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title" style="font-size:16pt;">
+                                <a href="#collapse1" data-toggle="collapse">
+                                    <i class="glyphicon glyphicon-tasks"></i> Menu
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapse1" class="panel-collapse collapse in">
+                            <ul class="list-group text-left">
+                                <li class="list-group-item">
+                                    <a data-toggle="tooltip" title="Home" style="font-size:13pt;" href="@Url.Action("Dashboard","Organizer")"><span class="glyphicon glyphicon-home"> Home</span></a>
+                                </li>
+                                <li class="list-group-item">
+                                    <a data-toggle="tooltip" title="Event Heads" style="font-size:13pt;" href="@Url.Action("EventHeads","Organizer")"><span class="glyphicon glyphicon-user"> Event Heads</span></a>
+                                </li>
+                                <li class="list-group-item">
+                                    <a data-toggle="tooltip" title="Participants" style="font-size:13pt;" href="@Url.Action("Participants","Organizer")"><span class="glyphicon glyphicon-user"> Participants</span></a>
+                                </li>
+                                <li class="list-group-item">
+                                    <a data-toggle="tooltip" title="Albums" style="font-size:13pt;" href="@Url.Action("Albums","Organizer")"><span class="glyphicon glyphicon-tags"> Albums</span></a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="panel-footer">
+                            <h5 style="text-align:center; color:orange"><i class="glyphicon glyphicon-copyright-mark"></i> TechFest</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-10" style="margin-top:10px;">
+                @RenderBody()
+            </div>
+        </div>
+    </div>
+</body>
+</html>

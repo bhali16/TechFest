@@ -41,5 +41,19 @@ namespace TechFest.Controllers
                 return View();
             }
         }
+
+        public ActionResult Dashboard()
+        {
+            if (Session["Organizer"] == null)
+            {
+                return RedirectToAction("Index", "Organizer");
+            }
+            else
+            {
+                string email = Session["Organizer"].ToString();
+                tblOrganizer tbl = db.tblOrganizers.Find(email);
+                return View(tbl);
+            }
+        }
     }
 }
