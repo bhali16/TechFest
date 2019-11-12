@@ -54,10 +54,13 @@ $result2 = mysqli_query($conn, $sql);
 if (mysqli_num_rows($result2) != 0 ) {
     
     // checking for user existence
-    while($row = mysqli_fetch_assoc($result2)) { ?>
+    while($row = mysqli_fetch_assoc($result2)) { 
+        $img = $row["img"];
+        $img = substr($img, 3);
+            ?>
             <div class="col-md-3 widget widget1">
         		<div class="r3_counter_box">
-                    <img class="pull-left img-rounded img-responsive" src="<?php print($row["img"]); ?>" style="margin-right:3px;">
+                    <img class="pull-left img-rounded img-responsive" src="<?php print($img); ?>" style="margin-right:3px;">
                     <div class="stats">
                       <h5><strong><?php print($row["title"]); ?></strong></h5>
                       <span>Start <?php print($row["start_date"]); ?></span>
