@@ -23,11 +23,19 @@ body{
 </head>
 <body>
 
+
+
+	<div>
+		
+<h2 style="color: white; font-size: 100px; text-align: center; border: 5px solid red; background-color: #fed8b1; border-radius: 300px;">The  Tech Fest @ 2019 </h2>
+
+	</div>
+
 	<table align="center" border="1px" style="width: 600px; line-height: 40px;  border: 2px solid white " >
 		<tr>
 			<th colspan="4"><h2 style="color: white">Students Records</h2></th>
 			</tr>
-			<th style="color: white; font-size: 25px;">Name</th>
+			<th style="color: white; font-size: 25px; padding: 5px;">Name</th>
 			<th style="color: white; font-size: 25px;">Email</th>
 			<th style="color: white; font-size: 25px;" >Category</th>
 
@@ -46,9 +54,9 @@ body{
 
 		<tr>
 			
-				<td style="color: white; font-size: 25px;"><?php echo $rows["Name"]; ?></td>
-				<td  style="color: white; font-size: 25px;"><?php echo $rows["Email"]; ?></td>
-				<td style="color: white; font-size: 25px;" ><?php echo $rows["category"]; ?></td>
+				<td style="color: white; font-size: 25px; padding: 5px;"><?php echo $rows["Name"]; ?></td>
+				<td  style="color: white; font-size: 25px; padding: 5px;"><?php echo $rows["Email"]; ?></td>
+				<td style="color: white; font-size: 25px; padding: 5px;" ><?php echo $rows["category"]; ?></td>
 			
 			
 		</tr>
