@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Models.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="tblEvent">
+    <Key>
+      <PropertyRef Name="EventID" />
+    </Key>
+    <Property Name="EventID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="30" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="StartData" Type="date" Nullable="false" />
+    <Property Name="EndDate" Type="date" Nullable="false" />
+    <Property Name="Coverphoto" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="isEnd" Type="bit" />
+    <Property Name="Price" Type="int" Nullable="false" />
+    <Property Name="MaximumMembersAllowed" Type="int" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblEventHeads">
+    <Key>
+      <PropertyRef Name="Email" />
+    </Key>
+    <Property Name="ProfilePhoto" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Gender" Type="varchar" MaxLength="6" Nullable="false" />
+    <Property Name="RegNo" Type="nvarchar" MaxLength="23" Nullable="false" />
+    <Property Name="Pwd" Type="nvarchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="tblEventRegistration">
+    <Key>
+      <PropertyRef Name="EventId" />
+    </Key>
+    <Property Name="EventId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Participant1Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="Participant2Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="OnlinePayment" Type="bit" />
+    <Property Name="PaymentConfirmed" Type="bit" />
+  </EntityType>
+  <EntityType Name="tblOrganizer">
+    <Key>
+      <PropertyRef Name="Email" />
+    </Key>
+    <Property Name="ProfilePhoto" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Gender" Type="varchar" MaxLength="6" Nullable="false" />
+    <Property Name="MobileNumber" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="Pwd" Type="nvarchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="tblParticipant">
+    <Key>
+      <PropertyRef Name="Email" />
+    </Key>
+    <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="Gender" Type="varchar" MaxLength="6" Nullable="false" />
+    <Property Name="RegNo" Type="nvarchar" MaxLength="23" Nullable="false" />
+    <Property Name="Approved" Type="bit" />
+    <Property Name="Pwd" Type="nvarchar" MaxLength="30" />
+    <Property Name="ProfilePhoto" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <Association Name="tblEvent_tblOrganizer_FK">
+    <End Role="tblOrganizer" Type="Self.tblOrganizer" Multiplicity="1" />
+    <End Role="tblEvent" Type="Self.tblEvent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblOrganizer">
+        <PropertyRef Name="Email" />
+      </Principal>
+      <Dependent Role="tblEvent">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="tblEventRegistration_tblParticipant_FK">
+    <End Role="tblParticipant" Type="Self.tblParticipant" Multiplicity="0..1" />
+    <End Role="tblEventRegistration" Type="Self.tblEventRegistration" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblParticipant">
+        <PropertyRef Name="Email" />
+      </Principal>
+      <Dependent Role="tblEventRegistration">
+        <PropertyRef Name="Participant1Email" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="tblEventRegistration_tblParticipantE_FK">
+    <End Role="tblParticipant" Type="Self.tblParticipant" Multiplicity="0..1" />
+    <End Role="tblEventRegistration" Type="Self.tblEventRegistration" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblParticipant">
+        <PropertyRef Name="Email" />
+      </Principal>
+      <Dependent Role="tblEventRegistration">
+        <PropertyRef Name="Participant2Email" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ModelsStoreContainer">
+    <EntitySet Name="tblEvent" EntityType="Self.tblEvent" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblEventHeads" EntityType="Self.tblEventHeads" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblEventRegistration" EntityType="Self.tblEventRegistration" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblOrganizer" EntityType="Self.tblOrganizer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblParticipant" EntityType="Self.tblParticipant" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="tblEvent_tblOrganizer_FK" Association="Self.tblEvent_tblOrganizer_FK">
+      <End Role="tblOrganizer" EntitySet="tblOrganizer" />
+      <End Role="tblEvent" EntitySet="tblEvent" />
+    </AssociationSet>
+    <AssociationSet Name="tblEventRegistration_tblParticipant_FK" Association="Self.tblEventRegistration_tblParticipant_FK">
+      <End Role="tblParticipant" EntitySet="tblParticipant" />
+      <End Role="tblEventRegistration" EntitySet="tblEventRegistration" />
+    </AssociationSet>
+    <AssociationSet Name="tblEventRegistration_tblParticipantE_FK" Association="Self.tblEventRegistration_tblParticipantE_FK">
+      <End Role="tblParticipant" EntitySet="tblParticipant" />
+      <End Role="tblEventRegistration" EntitySet="tblEventRegistration" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

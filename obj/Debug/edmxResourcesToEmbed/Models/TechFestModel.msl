@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ModelsStoreContainer" CdmEntityContainer="dbTechFestEntities">
+    <EntitySetMapping Name="tblEvents">
+      <EntityTypeMapping TypeName="Models.tblEvent">
+        <MappingFragment StoreEntitySet="tblEvent">
+          <ScalarProperty Name="EventID" ColumnName="EventID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="StartData" ColumnName="StartData" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="Coverphoto" ColumnName="Coverphoto" />
+          <ScalarProperty Name="isEnd" ColumnName="isEnd" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="MaximumMembersAllowed" ColumnName="MaximumMembersAllowed" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblEventHeads">
+      <EntityTypeMapping TypeName="Models.tblEventHead">
+        <MappingFragment StoreEntitySet="tblEventHeads">
+          <ScalarProperty Name="ProfilePhoto" ColumnName="ProfilePhoto" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="RegNo" ColumnName="RegNo" />
+          <ScalarProperty Name="Pwd" ColumnName="Pwd" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblEventRegistrations">
+      <EntityTypeMapping TypeName="Models.tblEventRegistration">
+        <MappingFragment StoreEntitySet="tblEventRegistration">
+          <ScalarProperty Name="EventId" ColumnName="EventId" />
+          <ScalarProperty Name="Participant1Email" ColumnName="Participant1Email" />
+          <ScalarProperty Name="Participant2Email" ColumnName="Participant2Email" />
+          <ScalarProperty Name="OnlinePayment" ColumnName="OnlinePayment" />
+          <ScalarProperty Name="PaymentConfirmed" ColumnName="PaymentConfirmed" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblOrganizers">
+      <EntityTypeMapping TypeName="Models.tblOrganizer">
+        <MappingFragment StoreEntitySet="tblOrganizer">
+          <ScalarProperty Name="ProfilePhoto" ColumnName="ProfilePhoto" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="MobileNumber" ColumnName="MobileNumber" />
+          <ScalarProperty Name="Pwd" ColumnName="Pwd" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblParticipants">
+      <EntityTypeMapping TypeName="Models.tblParticipant">
+        <MappingFragment StoreEntitySet="tblParticipant">
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="RegNo" ColumnName="RegNo" />
+          <ScalarProperty Name="Approved" ColumnName="Approved" />
+          <ScalarProperty Name="Pwd" ColumnName="Pwd" />
+          <ScalarProperty Name="ProfilePhoto" ColumnName="ProfilePhoto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

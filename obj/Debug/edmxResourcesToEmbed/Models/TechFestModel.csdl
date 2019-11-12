@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Models" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="tblEvent">
+    <Key>
+      <PropertyRef Name="EventID" />
+    </Key>
+    <Property Name="EventID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="StartData" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="EndDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Coverphoto" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="isEnd" Type="Boolean" />
+    <Property Name="Price" Type="Int32" Nullable="false" />
+    <Property Name="MaximumMembersAllowed" Type="Int32" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="tblOrganizer" Relationship="Self.tblEvent_tblOrganizer_FK" FromRole="tblEvent" ToRole="tblOrganizer" />
+  </EntityType>
+  <EntityType Name="tblEventHead">
+    <Key>
+      <PropertyRef Name="Email" />
+    </Key>
+    <Property Name="ProfilePhoto" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Gender" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="RegNo" Type="String" MaxLength="23" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Pwd" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tblEventRegistration">
+    <Key>
+      <PropertyRef Name="EventId" />
+    </Key>
+    <Property Name="EventId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Participant1Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Participant2Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="OnlinePayment" Type="Boolean" />
+    <Property Name="PaymentConfirmed" Type="Boolean" />
+    <NavigationProperty Name="tblParticipant" Relationship="Self.tblEventRegistration_tblParticipant_FK" FromRole="tblEventRegistration" ToRole="tblParticipant" />
+    <NavigationProperty Name="tblParticipant1" Relationship="Self.tblEventRegistration_tblParticipantE_FK" FromRole="tblEventRegistration" ToRole="tblParticipant" />
+  </EntityType>
+  <EntityType Name="tblOrganizer">
+    <Key>
+      <PropertyRef Name="Email" />
+    </Key>
+    <Property Name="ProfilePhoto" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Gender" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MobileNumber" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="Pwd" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tblEvents" Relationship="Self.tblEvent_tblOrganizer_FK" FromRole="tblOrganizer" ToRole="tblEvent" />
+  </EntityType>
+  <EntityType Name="tblParticipant">
+    <Key>
+      <PropertyRef Name="Email" />
+    </Key>
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Gender" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="RegNo" Type="String" MaxLength="23" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Approved" Type="Boolean" />
+    <Property Name="Pwd" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="ProfilePhoto" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="tblEventRegistrations" Relationship="Self.tblEventRegistration_tblParticipant_FK" FromRole="tblParticipant" ToRole="tblEventRegistration" />
+    <NavigationProperty Name="tblEventRegistrations1" Relationship="Self.tblEventRegistration_tblParticipantE_FK" FromRole="tblParticipant" ToRole="tblEventRegistration" />
+  </EntityType>
+  <Association Name="tblEvent_tblOrganizer_FK">
+    <End Role="tblOrganizer" Type="Self.tblOrganizer" Multiplicity="1" />
+    <End Role="tblEvent" Type="Self.tblEvent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblOrganizer">
+        <PropertyRef Name="Email" />
+      </Principal>
+      <Dependent Role="tblEvent">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="tblEventRegistration_tblParticipant_FK">
+    <End Role="tblParticipant" Type="Self.tblParticipant" Multiplicity="0..1" />
+    <End Role="tblEventRegistration" Type="Self.tblEventRegistration" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblParticipant">
+        <PropertyRef Name="Email" />
+      </Principal>
+      <Dependent Role="tblEventRegistration">
+        <PropertyRef Name="Participant1Email" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="tblEventRegistration_tblParticipantE_FK">
+    <End Role="tblParticipant" Type="Self.tblParticipant" Multiplicity="0..1" />
+    <End Role="tblEventRegistration" Type="Self.tblEventRegistration" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblParticipant">
+        <PropertyRef Name="Email" />
+      </Principal>
+      <Dependent Role="tblEventRegistration">
+        <PropertyRef Name="Participant2Email" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="dbTechFestEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="tblEvents" EntityType="Self.tblEvent" />
+    <EntitySet Name="tblEventHeads" EntityType="Self.tblEventHead" />
+    <EntitySet Name="tblEventRegistrations" EntityType="Self.tblEventRegistration" />
+    <EntitySet Name="tblOrganizers" EntityType="Self.tblOrganizer" />
+    <EntitySet Name="tblParticipants" EntityType="Self.tblParticipant" />
+    <AssociationSet Name="tblEvent_tblOrganizer_FK" Association="Self.tblEvent_tblOrganizer_FK">
+      <End Role="tblOrganizer" EntitySet="tblOrganizers" />
+      <End Role="tblEvent" EntitySet="tblEvents" />
+    </AssociationSet>
+    <AssociationSet Name="tblEventRegistration_tblParticipant_FK" Association="Self.tblEventRegistration_tblParticipant_FK">
+      <End Role="tblParticipant" EntitySet="tblParticipants" />
+      <End Role="tblEventRegistration" EntitySet="tblEventRegistrations" />
+    </AssociationSet>
+    <AssociationSet Name="tblEventRegistration_tblParticipantE_FK" Association="Self.tblEventRegistration_tblParticipantE_FK">
+      <End Role="tblParticipant" EntitySet="tblParticipants" />
+      <End Role="tblEventRegistration" EntitySet="tblEventRegistrations" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

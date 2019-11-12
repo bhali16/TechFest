@@ -1,0 +1,104 @@
+﻿@{
+    ViewBag.Title = "TechFest | Home";
+}
+<header class="masthead text-center text-white d-flex">
+    <div class="container my-auto">
+        <div class="container my-auto">
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <h1 class="text-uppercase">Welcome to</h1>
+                    <a class="navbar-brand js-scroll-trigger" href="#page-top" style="font-size:18pt;">TechFest</a>
+                    <p style="color: black" class="text-faded mb-5"><b>A smart website for organizing your events</b></p>
+                    <br />
+                </div>
+                <div class="col-lg-8 mx-auto">
+
+                    @*<a href="login.html" class="btn btn-primary btn-xl js-scroll-trigger" href="#about">Login</a>*@
+                    <a class="btn btn-primary btn-xl js-scroll-trigger" @Html.ActionLink("Get Started", "Toggle", "Home") </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<section class="bg-primary" id="about">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto text-center">
+                <h2 class="section-heading text-white">We've got what you need!</h2>
+                <hr class="light my-4">
+                <p class="text-faded mb-4">
+                    Techfest is an official channel of COMSATS Attock for organizing events for you.
+                </p>
+                <a class="btn btn-light btn-xl js-scroll-trigger" href="#services">Get Started!</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="services">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="section-heading">At Your Service</h2>
+                <hr class="my-4">
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-6 text-center">
+                <div class="service-box mt-5 mx-auto">
+                    <i class="fa fa-4x fa-camera text-primary mb-3 sr-icons"></i>
+                    <h5 class="mb-3">For Photographers</h5>
+                    <p class="text-muted mb-0">Photographers can manage and share thier pictures of event</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 text-center">
+                <div class="service-box mt-5 mx-auto">
+                    <i class="fa fa-4x fa-download text-primary mb-3 sr-icons"></i>
+                    <h5 class="mb-3">Instant access</h5>
+                    <p class="text-muted mb-0">Download High res photos by your favourite photographers without any delay</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 text-center">
+                <div class="service-box mt-5 mx-auto">
+                    <i class="fa fa-4x fal fa-clone text-primary mb-3 sr-icons"></i>
+                    <h5 class="mb-3">Smart Albums</h5>
+                    <p class="text-muted mb-0">Never miss your recent event photos</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 text-center">
+                <div class="service-box mt-5 mx-auto">
+                    <i class="fa fa-4x fal fa-database text-primary mb-3 sr-icons"></i>
+                    <h5 class="mb-3">Online Storage</h5>
+                    <p class="text-muted mb-0">One plateform for all Events</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="contact" style="background:bisque">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto text-center">
+                <h2 class="section-heading">Let's Get In Touch!</h2>
+                <hr class="my-4">
+                <p class="mb-5">If you have any quries using TechFest please send us email or call us</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 ml-auto text-center">
+                <i class="fa fa-phone fa-3x mb-3 sr-contact"></i>
+                <p>+92-xxxxxxxxxx</p>
+            </div>
+            <div class="col-lg-4 mr-auto text-center">
+                <i class="fa fa-envelope-o fa-3x mb-3 sr-contact"></i>
+                <p>
+                    <a href="mailto:your-email@your-domain.com">sp16-bse-023@ciit-attock.edu.pk</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</section>

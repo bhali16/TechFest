@@ -1,0 +1,563 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.5\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.5\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{AD6800DF-E213-4A25-B5B6-F35A0A01583B}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TechFest</RootNamespace>
+    <AssemblyName>TechFest</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.5\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.2.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.Agent.Intercept">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.0.6\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.2.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.2.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.2.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.2.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.2.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tblEvent.cs">
+      <DependentUpon>TechFestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tblEventHead.cs">
+      <DependentUpon>TechFestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tblEventRegistration.cs">
+      <DependentUpon>TechFestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tblOrganizer.cs">
+      <DependentUpon>TechFestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tblParticipant.cs">
+      <DependentUpon>TechFestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TechFestModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TechFestModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TechFestModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TechFestModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TechFestModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TechFestModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Models\TechFestModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>TechFestModel.Context.cs</LastGenOutput>
+      <DependentUpon>TechFestModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\TechFestModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>TechFestModel.edmx</DependentUpon>
+      <LastGenOutput>TechFestModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <EntityDeploy Include="Models\TechFestModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>TechFestModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\TechFestModel.edmx.diagram">
+      <DependentUpon>TechFestModel.edmx</DependentUpon>
+    </Content>
+    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.4.1.js" />
+    <Content Include="Scripts\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <Content Include="Scripts\popper.min.js" />
+    <Content Include="WebsiteTemplate\Content\bootstrap-grid.css" />
+    <Content Include="WebsiteTemplate\Content\bootstrap-grid.min.css" />
+    <Content Include="WebsiteTemplate\Content\bootstrap-reboot.css" />
+    <Content Include="WebsiteTemplate\Content\bootstrap-reboot.min.css" />
+    <Content Include="WebsiteTemplate\Content\bootstrap.css" />
+    <Content Include="WebsiteTemplate\Content\bootstrap.min.css" />
+    <Content Include="WebsiteTemplate\Content\css\creative.css" />
+    <Content Include="WebsiteTemplate\Content\css\creative.min.css" />
+    <Content Include="WebsiteTemplate\Content\css\datepicker.css" />
+    <Content Include="WebsiteTemplate\Content\css\datepicker.min.css" />
+    <Content Include="WebsiteTemplate\Content\css\file-upload.css" />
+    <Content Include="WebsiteTemplate\Content\css\gijgo.min.css" />
+    <Content Include="WebsiteTemplate\Content\img\album.png" />
+    <Content Include="WebsiteTemplate\Content\img\header.jpg" />
+    <Content Include="WebsiteTemplate\Content\img\loading.gif" />
+    <Content Include="WebsiteTemplate\Content\img\logo.png" />
+    <Content Include="WebsiteTemplate\Content\img\portfolio\fullsize\1.jpg" />
+    <Content Include="WebsiteTemplate\Content\img\portfolio\fullsize\2.jpg" />
+    <Content Include="WebsiteTemplate\Content\img\portfolio\fullsize\3.jpg" />
+    <Content Include="WebsiteTemplate\Content\img\portfolio\fullsize\4.jpg" />
+    <Content Include="WebsiteTemplate\Content\img\portfolio\fullsize\5.jpg" />
+    <Content Include="WebsiteTemplate\Content\img\portfolio\fullsize\6.jpg" />
+    <Content Include="WebsiteTemplate\Content\img\portfolio\thumbnails\1.jpg" />
+    <Content Include="WebsiteTemplate\Content\img\portfolio\thumbnails\2.jpg" />
+    <Content Include="WebsiteTemplate\Content\img\portfolio\thumbnails\3.jpg" />
+    <Content Include="WebsiteTemplate\Content\img\portfolio\thumbnails\4.jpg" />
+    <Content Include="WebsiteTemplate\Content\img\portfolio\thumbnails\5.jpg" />
+    <Content Include="WebsiteTemplate\Content\img\portfolio\thumbnails\6.jpg" />
+    <Content Include="WebsiteTemplate\Content\img\starblank.png" />
+    <Content Include="WebsiteTemplate\Content\img\starfull.png" />
+    <Content Include="WebsiteTemplate\Content\img\starhalf.png" />
+    <Content Include="WebsiteTemplate\Content\img\unknown.jpg" />
+    <Content Include="WebsiteTemplate\Content\js\air-datepicker.js" />
+    <Content Include="WebsiteTemplate\Content\js\body.js" />
+    <Content Include="WebsiteTemplate\Content\js\creative.js" />
+    <Content Include="WebsiteTemplate\Content\js\creative.min.js" />
+    <Content Include="WebsiteTemplate\Content\js\datepicker.js" />
+    <Content Include="WebsiteTemplate\Content\js\datepicker.min.js" />
+    <Content Include="WebsiteTemplate\Content\js\file-upload.js" />
+    <Content Include="WebsiteTemplate\Content\js\i18n\datepicker.cs.js" />
+    <Content Include="WebsiteTemplate\Content\js\i18n\datepicker.da.js" />
+    <Content Include="WebsiteTemplate\Content\js\i18n\datepicker.de.js" />
+    <Content Include="WebsiteTemplate\Content\js\i18n\datepicker.en.js" />
+    <Content Include="WebsiteTemplate\Content\js\i18n\datepicker.es.js" />
+    <Content Include="WebsiteTemplate\Content\js\i18n\datepicker.fi.js" />
+    <Content Include="WebsiteTemplate\Content\js\i18n\datepicker.fr.js" />
+    <Content Include="WebsiteTemplate\Content\js\i18n\datepicker.hu.js" />
+    <Content Include="WebsiteTemplate\Content\js\i18n\datepicker.nl.js" />
+    <Content Include="WebsiteTemplate\Content\js\i18n\datepicker.pl.js" />
+    <Content Include="WebsiteTemplate\Content\js\i18n\datepicker.pt-BR.js" />
+    <Content Include="WebsiteTemplate\Content\js\i18n\datepicker.pt.js" />
+    <Content Include="WebsiteTemplate\Content\js\i18n\datepicker.ro.js" />
+    <Content Include="WebsiteTemplate\Content\js\i18n\datepicker.sk.js" />
+    <Content Include="WebsiteTemplate\Content\js\i18n\datepicker.zh.js" />
+    <Content Include="WebsiteTemplate\Content\js\jquery.js" />
+    <Content Include="WebsiteTemplate\Content\js\jquery172.js" />
+    <Content Include="WebsiteTemplate\Content\js\navigation.js" />
+    <Content Include="WebsiteTemplate\Content\js\photo-gallery.js" />
+    <Content Include="WebsiteTemplate\Content\js\timepicker.js" />
+    <Content Include="WebsiteTemplate\Content\Site.css" />
+    <Content Include="WebsiteTemplate\Content\temp\css\creative.css" />
+    <Content Include="WebsiteTemplate\Content\temp\css\creative.min.css" />
+    <Content Include="WebsiteTemplate\Content\temp\gulpfile.js" />
+    <Content Include="WebsiteTemplate\Content\temp\img\header.jpg" />
+    <Content Include="WebsiteTemplate\Content\temp\img\portfolio\fullsize\1.jpg" />
+    <Content Include="WebsiteTemplate\Content\temp\img\portfolio\fullsize\2.jpg" />
+    <Content Include="WebsiteTemplate\Content\temp\img\portfolio\fullsize\3.jpg" />
+    <Content Include="WebsiteTemplate\Content\temp\img\portfolio\fullsize\4.jpg" />
+    <Content Include="WebsiteTemplate\Content\temp\img\portfolio\fullsize\5.jpg" />
+    <Content Include="WebsiteTemplate\Content\temp\img\portfolio\fullsize\6.jpg" />
+    <Content Include="WebsiteTemplate\Content\temp\img\portfolio\thumbnails\1.jpg" />
+    <Content Include="WebsiteTemplate\Content\temp\img\portfolio\thumbnails\2.jpg" />
+    <Content Include="WebsiteTemplate\Content\temp\img\portfolio\thumbnails\3.jpg" />
+    <Content Include="WebsiteTemplate\Content\temp\img\portfolio\thumbnails\4.jpg" />
+    <Content Include="WebsiteTemplate\Content\temp\img\portfolio\thumbnails\5.jpg" />
+    <Content Include="WebsiteTemplate\Content\temp\img\portfolio\thumbnails\6.jpg" />
+    <Content Include="WebsiteTemplate\Content\temp\index1.html" />
+    <Content Include="WebsiteTemplate\Content\temp\js\creative.js" />
+    <Content Include="WebsiteTemplate\Content\temp\js\creative.min.js" />
+    <Content Include="WebsiteTemplate\Content\temp\vendor\bootstrap\css\bootstrap-grid.css" />
+    <Content Include="WebsiteTemplate\Content\temp\vendor\bootstrap\css\bootstrap-grid.min.css" />
+    <Content Include="WebsiteTemplate\Content\temp\vendor\bootstrap\css\bootstrap-reboot.css" />
+    <Content Include="WebsiteTemplate\Content\temp\vendor\bootstrap\css\bootstrap-reboot.min.css" />
+    <Content Include="WebsiteTemplate\Content\temp\vendor\bootstrap\css\bootstrap.css" />
+    <Content Include="WebsiteTemplate\Content\temp\vendor\bootstrap\css\bootstrap.min.css" />
+    <Content Include="WebsiteTemplate\Content\temp\vendor\bootstrap\js\bootstrap.bundle.js" />
+    <Content Include="WebsiteTemplate\Content\temp\vendor\bootstrap\js\bootstrap.bundle.min.js" />
+    <Content Include="WebsiteTemplate\Content\temp\vendor\bootstrap\js\bootstrap.js" />
+    <Content Include="WebsiteTemplate\Content\temp\vendor\bootstrap\js\bootstrap.min.js" />
+    <Content Include="WebsiteTemplate\Content\temp\vendor\font-awesome\css\font-awesome.css" />
+    <Content Include="WebsiteTemplate\Content\temp\vendor\font-awesome\css\font-awesome.min.css" />
+    <Content Include="WebsiteTemplate\Content\temp\vendor\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="WebsiteTemplate\Content\temp\vendor\jquery-easing\jquery.easing.compatibility.js" />
+    <Content Include="WebsiteTemplate\Content\temp\vendor\jquery-easing\jquery.easing.js" />
+    <Content Include="WebsiteTemplate\Content\temp\vendor\jquery-easing\jquery.easing.min.js" />
+    <Content Include="WebsiteTemplate\Content\temp\vendor\jquery\jquery.js" />
+    <Content Include="WebsiteTemplate\Content\temp\vendor\jquery\jquery.min.js" />
+    <Content Include="WebsiteTemplate\Content\temp\vendor\jquery\jquery.slim.js" />
+    <Content Include="WebsiteTemplate\Content\temp\vendor\jquery\jquery.slim.min.js" />
+    <Content Include="WebsiteTemplate\Content\temp\vendor\magnific-popup\jquery.magnific-popup.js" />
+    <Content Include="WebsiteTemplate\Content\temp\vendor\magnific-popup\jquery.magnific-popup.min.js" />
+    <Content Include="WebsiteTemplate\Content\temp\vendor\magnific-popup\magnific-popup.css" />
+    <Content Include="WebsiteTemplate\Content\temp\vendor\scrollreveal\scrollreveal.js" />
+    <Content Include="WebsiteTemplate\Content\temp\vendor\scrollreveal\scrollreveal.min.js" />
+    <Content Include="WebsiteTemplate\Content\vendor\bootstrap\css\bootstrap-grid.css" />
+    <Content Include="WebsiteTemplate\Content\vendor\bootstrap\css\bootstrap-grid.min.css" />
+    <Content Include="WebsiteTemplate\Content\vendor\bootstrap\css\bootstrap-reboot.css" />
+    <Content Include="WebsiteTemplate\Content\vendor\bootstrap\css\bootstrap-reboot.min.css" />
+    <Content Include="WebsiteTemplate\Content\vendor\bootstrap\css\bootstrap.css" />
+    <Content Include="WebsiteTemplate\Content\vendor\bootstrap\css\bootstrap.min.css" />
+    <Content Include="WebsiteTemplate\Content\vendor\bootstrap\js\bootstrap.bundle.js" />
+    <Content Include="WebsiteTemplate\Content\vendor\bootstrap\js\bootstrap.bundle.min.js" />
+    <Content Include="WebsiteTemplate\Content\vendor\bootstrap\js\bootstrap.js" />
+    <Content Include="WebsiteTemplate\Content\vendor\bootstrap\js\bootstrap.min.js" />
+    <Content Include="WebsiteTemplate\Content\vendor\font-awesome\css\font-awesome.css" />
+    <Content Include="WebsiteTemplate\Content\vendor\font-awesome\css\font-awesome.min.css" />
+    <Content Include="WebsiteTemplate\Content\vendor\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="WebsiteTemplate\Content\vendor\jquery-easing\jquery.easing.compatibility.js" />
+    <Content Include="WebsiteTemplate\Content\vendor\jquery-easing\jquery.easing.js" />
+    <Content Include="WebsiteTemplate\Content\vendor\jquery-easing\jquery.easing.min.js" />
+    <Content Include="WebsiteTemplate\Content\vendor\jquery\jquery.js" />
+    <Content Include="WebsiteTemplate\Content\vendor\jquery\jquery.min.js" />
+    <Content Include="WebsiteTemplate\Content\vendor\jquery\jquery.slim.js" />
+    <Content Include="WebsiteTemplate\Content\vendor\jquery\jquery.slim.min.js" />
+    <Content Include="WebsiteTemplate\Content\vendor\magnific-popup\jquery.magnific-popup.js" />
+    <Content Include="WebsiteTemplate\Content\vendor\magnific-popup\jquery.magnific-popup.min.js" />
+    <Content Include="WebsiteTemplate\Content\vendor\magnific-popup\magnific-popup.css" />
+    <Content Include="WebsiteTemplate\Content\vendor\scrollreveal\scrollreveal.js" />
+    <Content Include="WebsiteTemplate\Content\vendor\scrollreveal\scrollreveal.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.4.1.min.map" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="WebsiteTemplate\Content\bootstrap-grid.css.map" />
+    <Content Include="WebsiteTemplate\Content\bootstrap-grid.min.css.map" />
+    <Content Include="WebsiteTemplate\Content\bootstrap-reboot.css.map" />
+    <Content Include="WebsiteTemplate\Content\bootstrap-reboot.min.css.map" />
+    <Content Include="WebsiteTemplate\Content\bootstrap.css.map" />
+    <Content Include="WebsiteTemplate\Content\bootstrap.min.css.map" />
+    <Content Include="WebsiteTemplate\Content\fonts\gijgo-material.ttf" />
+    <Content Include="WebsiteTemplate\Content\fonts\gijgo-material.woff" />
+    <Content Include="WebsiteTemplate\Content\less\file-upload.less" />
+    <Content Include="WebsiteTemplate\Content\sass\cell.scss" />
+    <Content Include="WebsiteTemplate\Content\sass\datepicker.scss" />
+    <Content Include="WebsiteTemplate\Content\sass\navigation.scss" />
+    <Content Include="WebsiteTemplate\Content\sass\timepicker.scss" />
+    <Content Include="WebsiteTemplate\Content\sass\_datepicker-config.scss" />
+    <Content Include="WebsiteTemplate\Content\scss\creative.scss" />
+    <Content Include="WebsiteTemplate\Content\scss\_bootstrap-overrides.scss" />
+    <Content Include="WebsiteTemplate\Content\scss\_global.scss" />
+    <Content Include="WebsiteTemplate\Content\scss\_masthead.scss" />
+    <Content Include="WebsiteTemplate\Content\scss\_mixins.scss" />
+    <Content Include="WebsiteTemplate\Content\scss\_navbar.scss" />
+    <Content Include="WebsiteTemplate\Content\scss\_portfolio.scss" />
+    <Content Include="WebsiteTemplate\Content\scss\_services.scss" />
+    <Content Include="WebsiteTemplate\Content\scss\_variables.scss" />
+    <Content Include="WebsiteTemplate\Content\temp\LICENSE" />
+    <Content Include="WebsiteTemplate\Content\temp\package-lock.json" />
+    <Content Include="WebsiteTemplate\Content\temp\package.json" />
+    <Content Include="WebsiteTemplate\Content\temp\README.md" />
+    <Content Include="WebsiteTemplate\Content\temp\scss\creative.scss" />
+    <Content Include="WebsiteTemplate\Content\temp\scss\_bootstrap-overrides.scss" />
+    <Content Include="WebsiteTemplate\Content\temp\scss\_global.scss" />
+    <Content Include="WebsiteTemplate\Content\temp\scss\_masthead.scss" />
+    <Content Include="WebsiteTemplate\Content\temp\scss\_mixins.scss" />
+    <Content Include="WebsiteTemplate\Content\temp\scss\_navbar.scss" />
+    <Content Include="WebsiteTemplate\Content\temp\scss\_portfolio.scss" />
+    <Content Include="WebsiteTemplate\Content\temp\scss\_services.scss" />
+    <Content Include="WebsiteTemplate\Content\temp\scss\_variables.scss" />
+    <Content Include="WebsiteTemplate\Content\temp\vendor\bootstrap\css\bootstrap.css.map" />
+    <Content Include="WebsiteTemplate\Content\temp\vendor\bootstrap\css\bootstrap.min.css.map" />
+    <Content Include="WebsiteTemplate\Content\temp\vendor\bootstrap\js\bootstrap.bundle.js.map" />
+    <Content Include="WebsiteTemplate\Content\temp\vendor\bootstrap\js\bootstrap.bundle.min.js.map" />
+    <Content Include="WebsiteTemplate\Content\temp\vendor\bootstrap\js\bootstrap.js.map" />
+    <Content Include="WebsiteTemplate\Content\temp\vendor\bootstrap\js\bootstrap.min.js.map" />
+    <Content Include="WebsiteTemplate\Content\temp\vendor\font-awesome\css\font-awesome.css.map" />
+    <Content Include="WebsiteTemplate\Content\temp\vendor\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="WebsiteTemplate\Content\temp\vendor\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="WebsiteTemplate\Content\temp\vendor\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="WebsiteTemplate\Content\temp\vendor\font-awesome\fonts\fontawesome-webfont.woff2" />
+    <Content Include="WebsiteTemplate\Content\temp\vendor\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="WebsiteTemplate\Content\temp\vendor\font-awesome\less\animated.less" />
+    <Content Include="WebsiteTemplate\Content\temp\vendor\font-awesome\less\bordered-pulled.less" />
+    <Content Include="WebsiteTemplate\Content\temp\vendor\font-awesome\less\core.less" />
+    <Content Include="WebsiteTemplate\Content\temp\vendor\font-awesome\less\fixed-width.less" />
+    <Content Include="WebsiteTemplate\Content\temp\vendor\font-awesome\less\font-awesome.less" />
+    <Content Include="WebsiteTemplate\Content\temp\vendor\font-awesome\less\icons.less" />
+    <Content Include="WebsiteTemplate\Content\temp\vendor\font-awesome\less\larger.less" />
+    <Content Include="WebsiteTemplate\Content\temp\vendor\font-awesome\less\list.less" />
+    <Content Include="WebsiteTemplate\Content\temp\vendor\font-awesome\less\mixins.less" />
+    <Content Include="WebsiteTemplate\Content\temp\vendor\font-awesome\less\path.less" />
+    <Content Include="WebsiteTemplate\Content\temp\vendor\font-awesome\less\rotated-flipped.less" />
+    <Content Include="WebsiteTemplate\Content\temp\vendor\font-awesome\less\screen-reader.less" />
+    <Content Include="WebsiteTemplate\Content\temp\vendor\font-awesome\less\stacked.less" />
+    <Content Include="WebsiteTemplate\Content\temp\vendor\font-awesome\less\variables.less" />
+    <Content Include="WebsiteTemplate\Content\temp\vendor\font-awesome\scss\font-awesome.scss" />
+    <Content Include="WebsiteTemplate\Content\temp\vendor\font-awesome\scss\_animated.scss" />
+    <Content Include="WebsiteTemplate\Content\temp\vendor\font-awesome\scss\_bordered-pulled.scss" />
+    <Content Include="WebsiteTemplate\Content\temp\vendor\font-awesome\scss\_core.scss" />
+    <Content Include="WebsiteTemplate\Content\temp\vendor\font-awesome\scss\_fixed-width.scss" />
+    <Content Include="WebsiteTemplate\Content\temp\vendor\font-awesome\scss\_icons.scss" />
+    <Content Include="WebsiteTemplate\Content\temp\vendor\font-awesome\scss\_larger.scss" />
+    <Content Include="WebsiteTemplate\Content\temp\vendor\font-awesome\scss\_list.scss" />
+    <Content Include="WebsiteTemplate\Content\temp\vendor\font-awesome\scss\_mixins.scss" />
+    <Content Include="WebsiteTemplate\Content\temp\vendor\font-awesome\scss\_path.scss" />
+    <Content Include="WebsiteTemplate\Content\temp\vendor\font-awesome\scss\_rotated-flipped.scss" />
+    <Content Include="WebsiteTemplate\Content\temp\vendor\font-awesome\scss\_screen-reader.scss" />
+    <Content Include="WebsiteTemplate\Content\temp\vendor\font-awesome\scss\_stacked.scss" />
+    <Content Include="WebsiteTemplate\Content\temp\vendor\font-awesome\scss\_variables.scss" />
+    <Content Include="WebsiteTemplate\Content\temp\vendor\jquery\jquery.min.map" />
+    <Content Include="WebsiteTemplate\Content\temp\vendor\jquery\jquery.slim.min.map" />
+    <Content Include="WebsiteTemplate\Content\vendor\bootstrap\css\bootstrap-grid.css.map" />
+    <Content Include="WebsiteTemplate\Content\vendor\bootstrap\css\bootstrap-grid.min.css.map" />
+    <Content Include="WebsiteTemplate\Content\vendor\bootstrap\css\bootstrap-reboot.css.map" />
+    <Content Include="WebsiteTemplate\Content\vendor\bootstrap\css\bootstrap-reboot.min.css.map" />
+    <Content Include="WebsiteTemplate\Content\vendor\bootstrap\css\bootstrap.css.map" />
+    <Content Include="WebsiteTemplate\Content\vendor\bootstrap\css\bootstrap.min.css.map" />
+    <Content Include="WebsiteTemplate\Content\vendor\bootstrap\js\bootstrap.bundle.js.map" />
+    <Content Include="WebsiteTemplate\Content\vendor\bootstrap\js\bootstrap.bundle.min.js.map" />
+    <Content Include="WebsiteTemplate\Content\vendor\bootstrap\js\bootstrap.js.map" />
+    <Content Include="WebsiteTemplate\Content\vendor\bootstrap\js\bootstrap.min.js.map" />
+    <Content Include="WebsiteTemplate\Content\vendor\font-awesome\css\font-awesome.css.map" />
+    <Content Include="WebsiteTemplate\Content\vendor\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="WebsiteTemplate\Content\vendor\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="WebsiteTemplate\Content\vendor\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="WebsiteTemplate\Content\vendor\font-awesome\fonts\fontawesome-webfont.woff2" />
+    <Content Include="WebsiteTemplate\Content\vendor\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="WebsiteTemplate\Content\vendor\font-awesome\less\animated.less" />
+    <Content Include="WebsiteTemplate\Content\vendor\font-awesome\less\bordered-pulled.less" />
+    <Content Include="WebsiteTemplate\Content\vendor\font-awesome\less\core.less" />
+    <Content Include="WebsiteTemplate\Content\vendor\font-awesome\less\fixed-width.less" />
+    <Content Include="WebsiteTemplate\Content\vendor\font-awesome\less\font-awesome.less" />
+    <Content Include="WebsiteTemplate\Content\vendor\font-awesome\less\icons.less" />
+    <Content Include="WebsiteTemplate\Content\vendor\font-awesome\less\larger.less" />
+    <Content Include="WebsiteTemplate\Content\vendor\font-awesome\less\list.less" />
+    <Content Include="WebsiteTemplate\Content\vendor\font-awesome\less\mixins.less" />
+    <Content Include="WebsiteTemplate\Content\vendor\font-awesome\less\path.less" />
+    <Content Include="WebsiteTemplate\Content\vendor\font-awesome\less\rotated-flipped.less" />
+    <Content Include="WebsiteTemplate\Content\vendor\font-awesome\less\screen-reader.less" />
+    <Content Include="WebsiteTemplate\Content\vendor\font-awesome\less\stacked.less" />
+    <Content Include="WebsiteTemplate\Content\vendor\font-awesome\less\variables.less" />
+    <Content Include="WebsiteTemplate\Content\vendor\font-awesome\scss\font-awesome.scss" />
+    <Content Include="WebsiteTemplate\Content\vendor\font-awesome\scss\_animated.scss" />
+    <Content Include="WebsiteTemplate\Content\vendor\font-awesome\scss\_bordered-pulled.scss" />
+    <Content Include="WebsiteTemplate\Content\vendor\font-awesome\scss\_core.scss" />
+    <Content Include="WebsiteTemplate\Content\vendor\font-awesome\scss\_fixed-width.scss" />
+    <Content Include="WebsiteTemplate\Content\vendor\font-awesome\scss\_icons.scss" />
+    <Content Include="WebsiteTemplate\Content\vendor\font-awesome\scss\_larger.scss" />
+    <Content Include="WebsiteTemplate\Content\vendor\font-awesome\scss\_list.scss" />
+    <Content Include="WebsiteTemplate\Content\vendor\font-awesome\scss\_mixins.scss" />
+    <Content Include="WebsiteTemplate\Content\vendor\font-awesome\scss\_path.scss" />
+    <Content Include="WebsiteTemplate\Content\vendor\font-awesome\scss\_rotated-flipped.scss" />
+    <Content Include="WebsiteTemplate\Content\vendor\font-awesome\scss\_screen-reader.scss" />
+    <Content Include="WebsiteTemplate\Content\vendor\font-awesome\scss\_stacked.scss" />
+    <Content Include="WebsiteTemplate\Content\vendor\font-awesome\scss\_variables.scss" />
+    <Content Include="WebsiteTemplate\Content\vendor\jquery\jquery.min.map" />
+    <Content Include="WebsiteTemplate\Content\vendor\jquery\jquery.slim.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="EventCoverPhotos\" />
+    <Folder Include="ProfilePhotos\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>49922</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:49922/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.5\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.5\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>
