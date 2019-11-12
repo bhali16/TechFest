@@ -11,7 +11,8 @@ namespace TechFest.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class tblOrganizer
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -22,9 +23,15 @@ namespace TechFest.Models
     
         public string ProfilePhoto { get; set; }
         public string Name { get; set; }
+
+        [Required]
+        [EmailAddress]
         public string Email { get; set; }
         public string Gender { get; set; }
         public decimal MobileNumber { get; set; }
+
+        [Required]
+        [DataType(DataType.Password)]
         public string Pwd { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

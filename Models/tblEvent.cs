@@ -26,5 +26,6 @@ namespace TechFest.Models
         public string CreatedBy { get; set; }
     
         public virtual tblOrganizer tblOrganizer { get; set; }
+        public System.Web.HttpPostedFileBase Imagefile { get; set; }
     }
 }

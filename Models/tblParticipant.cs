@@ -20,7 +20,7 @@ namespace TechFest.Models
             this.tblEventRegistrations = new HashSet<tblEventRegistration>();
             this.tblEventRegistrations1 = new HashSet<tblEventRegistration>();
         }
-    
+        public System.Web.HttpPostedFileBase Imagefile { get; set; }
         public string Email { get; set; }
         public string Name { get; set; }
         public string Gender { get; set; }

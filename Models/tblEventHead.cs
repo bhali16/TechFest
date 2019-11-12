@@ -14,6 +14,7 @@ namespace TechFest.Models
     
     public partial class tblEventHead
     {
+        public System.Web.HttpPostedFileBase Imagefile { get; set; }
         public string ProfilePhoto { get; set; }
         public string Name { get; set; }
         public string Email { get; set; }
